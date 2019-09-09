@@ -1,0 +1,11 @@
+%YAML 1.1
+---
+- feature: &car
+    name: car
+    parent: null
+- feature: &engine
+    name: engine
+    parent: *car
+- features: 
+    name: chasis
+    parent: *car

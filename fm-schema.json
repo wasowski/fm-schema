@@ -1,0 +1,32 @@
+{
+  "$id": "http://fixme.com/fm.json",
+  "$schema": "http://json-schema.org/schema#",
+  "title": "FM schema, proof of concept", 
+
+  "definitions": {
+    "feature_type" : {
+      "type" : "object",
+      "properties" : {
+        "feature" : {
+          "type" : "object",
+          "properties" : {
+            "name" : { 
+              "type": "string"
+            },
+            "parent" : {
+              "oneOf" : [
+                { "$ref": "#/definitions/feature_type" },
+                { "type": "null" }
+              ]
+            }
+          },
+          "required" : [ "parent" ],
+          "description" : "name is not required as it should default to the object id, if not used (so that we don't need to write names twice). For parent, that usually should be there, it seems more natural to require it, and allow null as a value"
+        }
+      }
+    }
+  },
+
+  "type" : "array",
+  "items" : { "$ref" : "#/definitions/feature_type"}
+}
