@@ -11,11 +11,11 @@ We propose to define feature models meta-model using JSON schema, and use YAML (
 The file `fm.yaml` contains a simple instance (inlined here for convenience):
 
 ```yaml
-- feature: &car                                                                                                                                                                                                                                            
-    parent: null                                                                                                                                                                                                                                           
-- feature: &engine                                                                                                                                                                                                                                         
-    parent: *car                                                  
-- features: &chasis                                                                                                                                                                                                                                                                                                                                                                                                                                                                            
+- feature: &car
+    parent: null
+- feature: &engine
+    parent: *car
+- feature: &chasis
     parent: *car
 ```
 

@@ -6,6 +6,6 @@
 - feature: &engine
     name: engine
     parent: *car
-- features: 
+- feature: &chasis
     name: chasis
     parent: *car
